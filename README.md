@@ -19,8 +19,8 @@ You should have node.js and redis installed correctly.
 
 After download this project, initialize the redis database with sample data:
 
-    $ cd webim
-    $ ./initredis.sh
+>$ cd webim
+>$ ./initredis.sh
 
 Note! this command will remove all data in your current redis database!
 

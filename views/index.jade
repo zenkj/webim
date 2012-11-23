@@ -1,0 +1,16 @@
+extends layout
+
+append head
+  script(src='/javascripts/webim-client.js')
+
+block main
+  .main
+    a(href='/logout') logout
+    #chat_backlog
+    #chat_input
+      input#chat_input_box(type='text')
+      input#chat_input_submit(type='submit', value='enter')
+    .hidden
+      input#current_user_id(type='hidden', value='#{userid}')
+      input#current_user_name(type='hidden', value='#{username}')
+    #log

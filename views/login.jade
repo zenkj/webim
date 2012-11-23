@@ -1,0 +1,17 @@
+extends layout
+
+block main
+  .main
+    form(action='/login', method='post')
+      table.login
+        tr
+          td ID:
+          td
+            input(type='text', name='userid')
+        tr
+          td Pass:
+          td
+            input(type='password', name='password')
+        tr
+          td(colspan='2')
+            input(type='submit', value='login')

@@ -222,7 +222,7 @@ app.get('/', function(req, res) {
   var user = activeUser(sessionid);
   var params = {};
   params.notification = req.session.notification;
-  params.title = 'zenkim - ' + user.name;
+  params.title = 'webim - ' + user.name;
   params.username = user.name;
   params.userid = user.id;
   res.render('index', params);
@@ -237,7 +237,7 @@ app.get('/login', function(req, res) {
     res.redirect('/');
   } else {
     var params = {};
-    params.title = 'zenkim';
+    params.title = 'webim';
     params.notification = req.session.notification;
     res.render('login', params);
     req.session.notification = undefined;

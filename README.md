@@ -19,14 +19,14 @@ You should have node.js and redis installed correctly.
 
 After download this project, initialize the redis database with sample data:
 
-$ cd webim
-$ ./initredis.sh
+    $ cd webim
+    $ ./initredis.sh
 
 Note! this command will remove all data in your current redis database!
 
 Then start WebIM:
 
-$ node app.js
+    $ node app.js
 
 now, open browser, access http://localhost:3000, login with ID 10001,
 password 123456. In another browser, login with ID 10002, password 123456.

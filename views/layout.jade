@@ -6,14 +6,14 @@ html
       link(rel='stylesheet', href='/stylesheets/style.css')
       script(src='/javascripts/jquery-1.8.2.min.js')
   body
-    .content
-      .header
+    #content
+      #header
         h1= title
         hr
-      .notification
+      #notification
         if notification
           p= notification
       block main
-      .footer
+      #footer
         hr
-        p Copyright 2012 JM
+        p Copyright 2012 zenk

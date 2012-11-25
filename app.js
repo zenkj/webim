@@ -287,10 +287,9 @@ app.get('/friendlist', function(req, res) {
     var friends = {};
     function getfriend() {
       if (i >= fids.length) {
-        var msg = JSON.stringify(friends);
         console.log('return friends:');
-        console.log(msg);
-        res.end(msg);
+        console.log(friends);
+        sendres(res, friends);
         return;
       }
       var fid = fids[i++];
@@ -370,7 +369,7 @@ app.post('/msg', function(req, res) {
 app.post('/background-worker', function(req, res) {
   var sessionid = req.session.id;
   if (!isActiveSession(req.session.id)) {
-    res.end(JSON.stringify({cmd:'stop'}));
+    sendres(res, {cmd:'stop'});
     return;
   }
   var user = activeUser(sessionid);

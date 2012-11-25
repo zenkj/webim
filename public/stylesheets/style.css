@@ -6,3 +6,34 @@ body {
 a {
   color: #00B7FF;
 }
+
+#main, #content {
+  text-align: center;
+}
+
+table.login {
+  margin: 0 auto 0 auto;
+  width: 20%;
+}
+
+#useradmin {
+  text-align: right;
+}
+
+#chat_backlog_container {
+  text-align: left;
+  margin: 0 auto 0 auto;
+  width: 60%;
+  height: 200px;
+  overflow: scroll;
+  position: relative;
+}
+
+.backlog {
+  top: 0px;
+  position: absolute;
+}
+
+#chat_input_box {
+  width: 60%;
+}

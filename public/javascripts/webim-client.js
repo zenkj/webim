@@ -3,12 +3,14 @@ $(document).ready(function() {
   var chatInputBox = $('#chat_input_box');
   var myid = $('#current_user_id').val();
   var myname = $('#current_user_name').val();
+  var backlogContainer = $('#chat_backlog_container');
   // current friend id, changed each time user select.
-  var currentfid;
+  var currentfid = null;
   var friends = {};
 
   $.ajaxSetup({ cache: false });
 
+  // only for test
   function log(msg) {
     $('<p>' + msg + '</p>').prependTo($('#log'));
   }
@@ -22,8 +24,9 @@ $(document).ready(function() {
   $.get('/friendlist', {}, function(flist) {
     friends = flist;
     for (var fid in friends) {
-      currentfid = fid;
-      break;
+      if (!currentfid) currentfid = fid;
+      var backlog = $('<div id="chat_backlog_' + fid + '" class="backlog"></div>');
+      backlog.appendTo(backlogContainer);
     }
   }, 'json');
   
@@ -71,11 +74,16 @@ $(document).ready(function() {
         return from;
       return to;
     }();
-    //var container = $("#backlog_" + dest);
-    var container = $("#chat_backlog");
+
+    if (!userName(dest))
+      return true;
+
+    var container = $("#chat_backlog_" + dest);
+
     $('<p><span class="user">' + userName(from) + '</span> at <span class="time">'
       + gettime() + '</span> <span class="date">' + getdate() + '</span></p>'
       + '<p><span class="msg">' + content + '</span></p>').appendTo(container);
+    backlogContainer.scrollTop(container.height());
 
     return true;
   }
@@ -159,5 +167,15 @@ $(document).ready(function() {
   });
   chatInputSubmit.click(_sendMsg);
 
-  $(document).focus(function(){charInputBox.focus();});
+  $(document).keydown(function(e) {
+    switch (e.which) {
+      case 13: //enter
+      case 27: //escape
+        chatInputBox.focus();
+        break;
+    }
+  });
+
+  chatInputBox.mouseover(function(){ chatInputBox.focus(); });
+  chatInputBox.focus();
 });

@@ -5,8 +5,9 @@ append head
 
 block main
   .main
-    a(href='/logout') logout
-    #chat_backlog
+    #useradmin
+      a(href='/logout') logout
+    #chat_backlog_container
     #chat_input
       input#chat_input_box(type='text')
       input#chat_input_submit(type='submit', value='enter')

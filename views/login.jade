@@ -1,13 +1,16 @@
 extends layout
 
+append head
+  script
+    $(document).ready(function() { $('#id').focus();});
 block main
-  .main
+  #main
     form(action='/login', method='post')
       table.login
         tr
           td ID:
           td
-            input(type='text', name='userid')
+            input(type='text', name='userid', id='id')
         tr
           td Pass:
           td

@@ -7,6 +7,7 @@ $(document).ready(function() {
   // current friend id, changed each time user select.
   var currentfid = null;
   var friends = {};
+  var backlog_is_show = true;
 
   $.ajaxSetup({ cache: false });
 
@@ -14,6 +15,16 @@ $(document).ready(function() {
   function log(msg) {
     $('<p>' + msg + '</p>').prependTo($('#log'));
   }
+
+  $('#toggle_backlog').click(function() {
+    if (backlog_is_show) {
+      backlog_is_show = false;
+      backlogContainer.fadeOut(100);
+    } else {
+      backlog_is_show = true;
+      backlogContainer.fadeIn(2000);
+    }
+  });
 
   function userName(userID){
     if (userID == myid) return myname;

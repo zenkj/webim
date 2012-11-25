@@ -16,8 +16,17 @@ table.login {
   width: 20%;
 }
 
+#toggle_backlog {
+  color:#EEE;
+  float:left;
+}
+
+#toggle_backlog:hover {
+  color: #CBB;
+}
+
 #useradmin {
-  text-align: right;
+  float: right;
 }
 
 #chat_backlog_container {
@@ -37,3 +46,4 @@ table.login {
 #chat_input_box {
   width: 60%;
 }
+

@@ -5,8 +5,10 @@ append head
 
 block main
   .main
-    #useradmin
-      a(href='/logout') logout
+    #admin
+      span#toggle_backlog toggle
+      span#useradmin
+        a(href='/logout') logout
     #chat_backlog_container
     #chat_input
       input#chat_input_box(type='text')

@@ -90,10 +90,13 @@ $(document).ready(function() {
       return true;
 
     var container = $("#chat_backlog_" + dest);
+    var msgcls = 'mymsg';
+    if (from != myid)
+      msgcls = 'othermsg';
 
-    $('<p><span class="user">' + userName(from) + '</span> at <span class="time">'
+    $('<div class="' + msgcls +'"><p class="infoline"><span class="user">' + userName(from) + '</span> at <span class="time">'
       + gettime() + '</span> <span class="date">' + getdate() + '</span></p>'
-      + '<p><span class="msg">' + content + '</span></p>').appendTo(container);
+      + '<p class="msgline"><span class="msg">' + content + '</span></p></div>').appendTo(container);
     backlogContainer.scrollTop(container.height());
 
     return true;

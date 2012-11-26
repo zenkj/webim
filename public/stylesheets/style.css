@@ -32,15 +32,45 @@ table.login {
 #chat_backlog_container {
   text-align: left;
   margin: 0 auto 0 auto;
-  width: 60%;
-  height: 200px;
+  width: 450px;
+  height: 350px;
   overflow: scroll;
   position: relative;
 }
 
 .backlog {
+  width: 100%;
   top: 0px;
   position: absolute;
+}
+
+.mymsg {
+  text-align: right;
+}
+
+.othermsg{
+  text-align: left;
+}
+
+.mymsg, .othermsg {
+  width: 100%;
+}
+
+.infoline {
+  width: 100%;
+  background: #DDD;
+}
+
+.infoline .user {
+  color: red;
+}
+
+.infoline .time {
+  color: #345;
+}
+
+.infoline .date {
+  color: #AAA;
 }
 
 #chat_input_box {
